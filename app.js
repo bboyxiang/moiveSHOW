@@ -7,7 +7,8 @@ angular.module('movecat', [
 
   'movecat.in_theater',
   'movecat.comming_soon',
-  'movecat.top250'
+  'movecat.top250',
+  'moviecat.auto_active'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/in_theater'});

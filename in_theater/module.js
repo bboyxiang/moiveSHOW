@@ -15,7 +15,6 @@ angular.module('movecat.in_theater', ['ngRoute'])
     '$routeParams',
     'HttpService',
     function($scope, $route, $routeParams, HttpService) {
-        console.log(11)
         var pageSize = 5; // 每页显示几条
         $scope.page = parseInt($routeParams.page || 1);
         var start = ($scope.page - 1) * 5;
