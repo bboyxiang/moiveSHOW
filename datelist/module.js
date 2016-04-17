@@ -25,12 +25,13 @@ angular.module('movecat.datelist', ['ngRoute'])
         $scope.movies = {};
         HttpService
             .jsonp(
-                'http://api.douban.com/v2/movie/' + $routeParams.category, {
+                'http://api.douban.com/v2/movie/' + $routeParams.category, 
+                {
                     start: start,
-                    count: pageSize
+                    count: pageSize,
+                    q: $routeParams.q
                 },
                 function(data) {
-                    console.log(data)
                     $scope.loading = false;
                     $scope.title = data.title;
                     $scope.movies = data.subjects;
