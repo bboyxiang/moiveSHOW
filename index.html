@@ -29,8 +29,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">搜索电影</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+          <form ng-controller="SearchController" ng-submit="search()" class="navbar-form navbar-right">
+            <input type="text" ng-modle="input" class="form-control" placeholder="Search...">
           </form>
         </div>
       </div>
@@ -56,11 +56,12 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
-    <script src="in_theater/module.js"></script>
+    <!-- <script src="in_theater/module.js"></script>
     <script src="comming_soon/module.js"></script>
-    <script src="top250/module.js"></script>
+    <script src="top250/module.js"></script> -->
     <script src="components/http.service.js"></script>
     <script src="components/auto_active.js"></script>
+    <script src="movie_detail/module.js"></script>
 
 
   </body>

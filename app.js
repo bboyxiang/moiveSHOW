@@ -2,15 +2,24 @@
 
 // Declare app level module which depends on views, and components
 angular.module('movecat', [
-  'ngRoute',
-  'moviecat.services.http',
-
-  'movecat.in_theater',
-  'movecat.comming_soon',
-  'movecat.top250',
-  'moviecat.auto_active'
+    'ngRoute',
+    'moviecat.movie_detail',
+    'movecat.datelist',
+    /*'movecat.in_theater',
+    'movecat.comming_soon',
+    'movecat.top250',*/
+    'moviecat.auto_active'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/in_theater'});
-}]);
-
+    $routeProvider.otherwise({ redirectTo: '/in_theater' });
+}])
+.controller('SearchController', [
+    '$scope',
+    '$route',
+    function($scope, $route) {
+        $scope.input = '';
+        $scope.search = function () {
+            $route.updateParams({ category: 'search', q: $scope.input});
+        }
+    }
+]);
