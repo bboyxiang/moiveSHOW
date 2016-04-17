@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('movecat.datelist', ['ngRoute', 'moviecat.services.http'])
+angular.module('movecat.datelist', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/:category/:page?', {
@@ -22,7 +22,7 @@ angular.module('movecat.datelist', ['ngRoute', 'moviecat.services.http'])
          
         $scope.loading = true;
         $scope.title = 'loading...';
-        $scope.movies = [];
+        $scope.movies = {};
         HttpService
             .jsonp(
                 'http://api.douban.com/v2/movie/' + $routeParams.category, {
